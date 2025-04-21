@@ -8,23 +8,16 @@
     <br>
     <form:form action="showDetails" modelAttribute="employee">
 
-      <br> Name
-      <form:input path="name" />
+      <br> Name      <form:input path="name" />
       <br>
-      <br> Surname
-      <form:input path="surname" />
+      <br> Surname      <form:input path="surname" />
       <br>
-      <br> Salary
-      <form:input path="salary" />
+      <br> Salary      <form:input path="salary" />
       <br>
-      <br> Department
-      <form:select path="department">
-      <form:option label="IT" value="Information Tehnology"/>
-        <form:option label="HR" value="Human Resources"/>
-        <form:option label="Salary" value="Salary"/>
+      <br> Department      <form:select path="department">
+      <form:options items="${employee.departments}" />
       </form:select>
-      <br> <br>
-      <input type="submit" value="OK" />
+      <br> <br>       <input type="submit" value="OK" />
     </form:form>
   </body>
 

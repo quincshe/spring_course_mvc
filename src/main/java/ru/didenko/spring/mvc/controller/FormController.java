@@ -18,7 +18,7 @@ public class FormController {
 
     @RequestMapping("/askDetails")
     public String askEmpDetails(Model model) {
-        Employee employee = new Employee("Ivan", "Ivanov", 1000);
+        Employee employee = new Employee();
         model.addAttribute("employee", employee);
         return "ask-emp-details-view-form";
     }
