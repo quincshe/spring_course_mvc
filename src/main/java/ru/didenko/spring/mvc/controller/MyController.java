@@ -1,19 +1,17 @@
-package ru.didenko.spring.mvc;
+package ru.didenko.spring.mvc.controller;
 
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-
 @RequestMapping("/emp")
 public class MyController {
 
     @RequestMapping("/")
     public String showMyView(){
-        return "myView";
+        return "my-view";
     }
 
     @RequestMapping("/askDetails")
