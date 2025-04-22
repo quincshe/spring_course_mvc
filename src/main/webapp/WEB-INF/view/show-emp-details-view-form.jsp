@@ -13,6 +13,8 @@
   <br> Your Department: ${employee.department}
   <br>
   <br> Your CarBrand: ${employee.carBrand}
+  <br>
+  <br> Your Phone number: ${employee.phoneNumber}
 </body>
 
 </html>

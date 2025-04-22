@@ -1,8 +1,10 @@
 package ru.didenko.spring.mvc.controller;
 
 
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.didenko.spring.mvc.bean.Employee;
@@ -24,11 +26,11 @@ public class FormController {
     }
 
     @RequestMapping("/showDetails")
-    public String showEmpDetails(@ModelAttribute("employee") Employee emp) {
-        emp.setName("Mr. " + emp.getName());
-        emp.setSurname(emp.getSurname() + " esquire");
-        emp.setSalary(emp.getSalary() + 100);
-
+    public String showEmpDetails(@Valid @ModelAttribute("employee") Employee emp,
+        BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+            return "ask-emp-details-view-form";
+        }
         return "show-emp-details-view-form";
     }
 

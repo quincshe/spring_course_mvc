@@ -8,20 +8,33 @@
     <br>
     <form:form action="showDetails" modelAttribute="employee">
 
-      <br> Name      <form:input path="name" />
+      <br> Name
+      <form:input path="name" />
+      <form:errors path="name" />
       <br>
-      <br> Surname      <form:input path="surname" />
+      <br> Surname
+      <form:input path="surname" />
+      <form:errors path="surname" />
       <br>
-      <br> Salary      <form:input path="salary" />
+      <br> Salary
+      <form:input path="salary" />
+      <form:errors path="salary" />
       <br>
-      <br> Department      <form:select path="department">
-      <form:options items="${employee.departments}" />
+      <br> Department
+      <form:select path="department">
+        <form:options items="${employee.departments}" />
       </form:select>
       <br>
       <br> CarBrand
-            <form:radiobuttons path="carBrand" items="${employee.carBrands}" />
-
-      <br> <br>       <input type="submit" value="OK" />
+      <form:radiobuttons path="carBrand" items="${employee.carBrands}" />
+      <form:errors path="carBrand" />
+      <br>
+      <br> Phone number
+      <form:input path="phoneNumber" />
+      <form:errors path="phoneNumber" />
+      <br>
+      <br>
+      <input type="submit" value="OK" />
     </form:form>
   </body>
 
