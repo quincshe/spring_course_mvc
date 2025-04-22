@@ -8,6 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import ru.didenko.spring.mvc.validation.CheckEmail;
 
 public class Employee {
 
@@ -34,6 +35,9 @@ public class Employee {
 
     @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "phone number template XXX-XX-XX")
     private String phoneNumber;
+
+    @CheckEmail(value = "@mail.ru", message = "email mast ends with @mail.ru")
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
@@ -109,6 +113,14 @@ public class Employee {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
